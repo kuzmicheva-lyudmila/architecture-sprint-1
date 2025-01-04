@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from './Card';
-import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import CardModel from 'card';
+import { CurrentUserContext } from "react-redux";
 
 function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete }) {
   const currentUser = React.useContext(CurrentUserContext);
@@ -21,7 +21,7 @@ function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onC
       <section className="places page__section">
         <ul className="places__list">
           {cards.map((card) => (
-            <Card
+            <CardModel
               key={card._id}
               card={card}
               onCardClick={onCardClick}
